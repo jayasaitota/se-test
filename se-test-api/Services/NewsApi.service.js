@@ -8,7 +8,6 @@ return await  newsapi.v2.topHeadlines({
   language: 'en',
   country: 'us'
 }).then(response => {
-  console.log(response);
   return {
     status: "ok",
     articles: [...response.articles]
@@ -30,7 +29,6 @@ return await newsapi.v2.everything({
   from: new Date().toISOString().split('T')[0],
   sortBy: 'popularity',
 }).then(response => {
-  console.log(response);
   return {
     status: "ok",
     articles: [...response.articles]
