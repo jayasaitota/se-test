@@ -26,7 +26,7 @@ app.get('/top-headlines', async (req,res)=>{
 
 app.get('/everything', async (req,res)=>{
   if(!req.query.q){
-   return res.status(400).json({errMessage:"Missing Madatory field"})
+    req.query.q = 'apple'
   }
   let response = await getNewsByTopic(req.query.q);
   if(response.status === 'ok'){
